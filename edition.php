@@ -81,30 +81,23 @@ if (isset($_POST['envoyer'])) {
 
  ?>
 
-
-
-         <?php
-            include ('db_connect.php');
-           $edit= $or->query("SELECT * FROM utilisateur  ");
-           while($affiche = $edit->fetch()){
-        ?>
           <form method="post" action="" enctype="multipart/form-data">
           
             <div class="form-group">
-             <label>Nom</label> <input type="text" name="pseudo" class="form-control" required="" style="width: 300px;" placeholder="votre nom" value="<?php echo $affiche['pseudo']?>">
+             <label>Nom</label> <input type="text" name="pseudo" class="form-control" required="" style="width: 300px;" placeholder="votre nom" value="">
             </div>
              <div class="form-group">
-             <input type="hidden" name="id" class="form-control"  style="width: 300px;" value="<?php echo $affiche['id']?>">
+             <input type="hidden" name="id" class="form-control"  style="width: 300px;" value="">
             </div></br>
             <div class="form-group">
-             <label>E-mail</label> <input type="email" name="mail" class="form-control" required="" style="width: 300px;" placeholder="@gmail.com" value="<?php echo $affiche['email']?>">
+             <label>E-mail</label> <input type="email" name="mail" class="form-control" required="" style="width: 300px;" placeholder="@gmail.com" value="">
             </div></br>
             <div class="form-group">
-              <label>Mot de passe</label> <input type="password" name="password" class="form-control" required="" style="width: 300px;" placeholder="votre mot de passe" value="<?php echo $affiche['password']?>">
+              <label>Mot de passe</label> <input type="password" name="password" class="form-control" required="" style="width: 300px;" placeholder="votre mot de passe" value="">
             </div></br>
             <div class="form-group">
               <div class="form-group">
-              <label>Confirmer le mot de passe</label> <input type="password" name="password1"class="form-control" required="" style="width: 300px;" placeholder="confirmation du mot de passe" value="<?php echo $affiche['password']?>"> 
+              <label>Confirmer le mot de passe</label> <input type="password" name="password1"class="form-control" required="" style="width: 300px;" placeholder="confirmation du mot de passe" value=""> 
             </div></br>
            <div class="form-group">
            <label>Photo de profil</label> <input class="btn btn-success" type="file" name="photo" id="photo" value="Modifier la photo">
@@ -114,9 +107,7 @@ if (isset($_POST['envoyer'])) {
            <input type="submit" class="btn btn-sm btn-info btn-block" name="envoyer" value="Editer " style="width: 250px;font-size: 17px;">
            
           </form>
-      <?php
-                  }
-             ?>
+    
 
           </div>
         </div>

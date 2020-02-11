@@ -1,0 +1,73 @@
+[1mdiff --git a/edition.php b/edition.php[m
+[1mindex ea62e0b..53d19d0 100644[m
+[1m--- a/edition.php[m
+[1m+++ b/edition.php[m
+[36m@@ -81,30 +81,23 @@[m [mif (isset($_POST['envoyer'])) {[m
+ [m
+  ?>[m
+ [m
+[31m-[m
+[31m-[m
+[31m-         <?php[m
+[31m-            include ('db_connect.php');[m
+[31m-           $edit= $or->query("SELECT * FROM utilisateur  ");[m
+[31m-           while($affiche = $edit->fetch()){[m
+[31m-        ?>[m
+           <form method="post" action="" enctype="multipart/form-data">[m
+           [m
+             <div class="form-group">[m
+[31m-             <label>Nom</label> <input type="text" name="pseudo" class="form-control" required="" style="width: 300px;" placeholder="votre nom" value="<?php echo $affiche['pseudo']?>">[m
+[32m+[m[32m             <label>Nom</label> <input type="text" name="pseudo" class="form-control" required="" style="width: 300px;" placeholder="votre nom" value="">[m
+             </div>[m
+              <div class="form-group">[m
+[31m-             <input type="hidden" name="id" class="form-control"  style="width: 300px;" value="<?php echo $affiche['id']?>">[m
+[32m+[m[32m             <input type="hidden" name="id" class="form-control"  style="width: 300px;" value="">[m
+             </div></br>[m
+             <div class="form-group">[m
+[31m-             <label>E-mail</label> <input type="email" name="mail" class="form-control" required="" style="width: 300px;" placeholder="@gmail.com" value="<?php echo $affiche['email']?>">[m
+[32m+[m[32m             <label>E-mail</label> <input type="email" name="mail" class="form-control" required="" style="width: 300px;" placeholder="@gmail.com" value="">[m
+             </div></br>[m
+             <div class="form-group">[m
+[31m-              <label>Mot de passe</label> <input type="password" name="password" class="form-control" required="" style="width: 300px;" placeholder="votre mot de passe" value="<?php echo $affiche['password']?>">[m
+[32m+[m[32m              <label>Mot de passe</label> <input type="password" name="password" class="form-control" required="" style="width: 300px;" placeholder="votre mot de passe" value="">[m
+             </div></br>[m
+             <div class="form-group">[m
+               <div class="form-group">[m
+[31m-              <label>Confirmer le mot de passe</label> <input type="password" name="password1"class="form-control" required="" style="width: 300px;" placeholder="confirmation du mot de passe" value="<?php echo $affiche['password']?>"> [m
+[32m+[m[32m              <label>Confirmer le mot de passe</label> <input type="password" name="password1"class="form-control" required="" style="width: 300px;" placeholder="confirmation du mot de passe" value="">[m[41m [m
+             </div></br>[m
+            <div class="form-group">[m
+            <label>Photo de profil</label> <input class="btn btn-success" type="file" name="photo" id="photo" value="Modifier la photo">[m
+[36m@@ -114,9 +107,7 @@[m [mif (isset($_POST['envoyer'])) {[m
+            <input type="submit" class="btn btn-sm btn-info btn-block" name="envoyer" value="Editer " style="width: 250px;font-size: 17px;">[m
+            [m
+           </form>[m
+[31m-      <?php[m
+[31m-                  }[m
+[31m-             ?>[m
+[32m+[m[41m    [m
+ [m
+           </div>[m
+         </div>[m
+[1mdiff --git a/profil.php b/profil.php[m
+[1mindex 8a6885b..782f31b 100644[m
+[1m--- a/profil.php[m
+[1m+++ b/profil.php[m
+[36m@@ -60,16 +60,7 @@[m [minclude('connectes.php');[m
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">[m
+     <h1 class="page-header"> Profil de <?php echo $_SESSION['pseudo'];  ?></h1>[m
+     <center><img src="img/3.jpg"></center><br>[m
+[31m-<?php[m
+[31m-          include ('db_connect.php');[m
+[31m-           $cpt= $or->query("SELECT * FROM utilisateur  ");[m
+[31m-           while($affiche = $cpt->fetch()){[m
+[31m-        ?>[m
+[31m-    <label>Nom d'utilisateur: <?php echo $affiche['pseudo'];  ?></label></br>[m
+[31m-    <label>Adresse mail:  <?php echo $affiche['email']?> </label></br>[m
+[31m-<?php[m
+[31m-                  }[m
+[31m-             ?>[m
+[32m+[m
+       <label><a class="btn btn-info" href="edition.php?ps=<?php echo $_SESSION['pseudo'];  ?>">Editer le profil</a></label> </br>[m
+       [m
+       <a class="btn btn-danger" href="delete_compte.php">Supprimer le compte</a></br></br>[m

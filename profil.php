@@ -60,16 +60,7 @@ include('connectes.php');
    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h1 class="page-header"> Profil de <?php echo $_SESSION['pseudo'];  ?></h1>
     <center><img src="img/3.jpg"></center><br>
-<?php
-          include ('db_connect.php');
-           $cpt= $or->query("SELECT * FROM utilisateur  ");
-           while($affiche = $cpt->fetch()){
-        ?>
-    <label>Nom d'utilisateur: <?php echo $affiche['pseudo'];  ?></label></br>
-    <label>Adresse mail:  <?php echo $affiche['email']?> </label></br>
-<?php
-                  }
-             ?>
+
       <label><a class="btn btn-info" href="edition.php?ps=<?php echo $_SESSION['pseudo'];  ?>">Editer le profil</a></label> </br>
       
       <a class="btn btn-danger" href="delete_compte.php">Supprimer le compte</a></br></br>
